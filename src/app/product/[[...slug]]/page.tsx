@@ -11,11 +11,15 @@ const DetailProductPage = (props: DetailProductPageProps) => {
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
             <h1>
-                Detail Product Page
+                {params.slug ? "Detail Product Page" : "Product Page"}
             </h1>
-            <h3>
-                id Product : {params.slug}
-            </h3>
+            <div>
+                {params.slug && (<>
+                    <p>id Product : {params.slug[0]}</p>
+                    <p>jenis Product : {params.slug[1]}</p>
+                </>)
+                }
+            </div>
         </main>
     )
 }
