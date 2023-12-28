@@ -1,7 +1,39 @@
+import Link from "next/link"
+
 const LoginPage = () => {
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            Login Page
+            <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+                <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+                    <h1 className="mb-8 text-3xl text-center">Sign in</h1>
+
+                    <input
+                        type="text"
+                        className="block border border-grey-light w-full p-3 rounded mb-4"
+                        name="email"
+                        placeholder="Email" />
+
+                    <input
+                        type="password"
+                        className="block border border-grey-light w-full p-3 rounded mb-4"
+                        name="password"
+                        placeholder="Password" />
+
+                    <button
+                        type="submit"
+                        className="w-full text-center py-3 rounded bg-green text-black bg-green-400 focus:outline-none my-1"
+                    >Sign in</button>
+                    <div className="text-grey-dark mt-6">
+                    don't have an account ?{" "}
+                        <Link
+                            className="no-underline border-b border-blue text-blue"
+                            href="/register"
+                        >
+                            Sign Up
+                        </Link>.
+                    </div>
+                </div>
+            </div>
         </main>
     )
 }
